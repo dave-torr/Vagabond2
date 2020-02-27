@@ -1,0 +1,79 @@
+.App {
+    text-align: center;
+    scroll-behavior: unset;
+  }
+
+#generalLogo{
+    padding: 5px;
+    margin: 25px;
+    width: 24%;
+
+}
+
+.App{
+
+}
+
+#homeButtons{
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px rgb(224, 90, 211);
+}
+
+#BroughBy{
+    width: 200px;
+    line-height: 80%;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left:-100px;
+    color: rgba(255, 255, 255, 0.959);
+}
+
+#homelink{
+    color: rgba(255, 255, 255, 0.959);
+}
+
+#climbCard{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-color: rgb(206, 176, 7);
+    text-shadow: 1px 1px white;
+    background-color: rgba(255, 255, 255);
+}
+
+#climbCardDetail{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#diveCard{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-color: rgb(116, 141, 177);
+    text-shadow: 1px 1px white;
+    background-color: rgba(255, 255, 255);
+}
+
+#diveCardDetail{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#collapseClimbs{
+    /* ADD THE BUTTON TO COLLAPSE CLIMBS */
+}
+
+#introText{
+    color: rgba(255, 255, 255, 0.959);
+    margin: 20px 10px;
+}
+
+#introTitles{
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
