@@ -107,6 +107,18 @@ class App extends Component {
     })
   }
 
+  climbTrigger = (e) =>{
+    this.setState({
+      climbs: false
+    })
+  }
+
+  diveTrigger = (e) =>{
+    this.setState({
+      dives: false
+    })
+  }
+
   
 
   render() {  
@@ -142,6 +154,8 @@ class App extends Component {
                 findlatLongCraigs={this.findlatLongCraigs}
                 loadClimbHandler={this.loadClimbHandler}
                 loadDiveHandler={this.loadDiveHandler}
+                diveTrigger={this.diveTrigger}
+                climbTrigger={this.climbTrigger}
               />  
           </div>
       </>

@@ -16,8 +16,8 @@ class Distances extends Component {
         if(this.props.stateprop.infoReady){
             return (                
                 <div>
-                <h2>{this.props.stateprop.craigs.length}</h2> 
-                <h4>Climbing Spots within a 200 mile Radius</h4>
+                <h2 id='activityResult'>{this.props.stateprop.craigs.length}</h2> 
+                <h4 id='activityResult' >Climbing Spots within a 200 mile Radius</h4>
 
                 {this.showClimbingInfo()}
                 {this.showClimbButton()}
@@ -124,8 +124,8 @@ class Distances extends Component {
         if(this.props.stateprop.infoReady){
             return (                
                 <div>
-                <h2>{this.props.stateprop.divingSpots.length}</h2> 
-                <h4>Diving Spots within a 50 mile Radius</h4>
+                <h2 id='activityResult'>{this.props.stateprop.divingSpots.length}</h2> 
+                <h4 id='activityResult'> Diving Spots within a 50 mile Radius</h4>
 
                 {this.showDivingInfo()}
                 {this.showDiveButton()}
@@ -146,12 +146,32 @@ class Distances extends Component {
             )
         } 
     }
+
+    closeButtons = ()=>{
+        if(this.props.stateprop.climbs){
+            return(
+                <>
+                    <Button variant="warning" id='closeClimbs' onClick={(e) => {this.props.climbTrigger(e);}}>
+                    X Climbs</Button>
+                    </>
+            )
+        } if(this.props.stateprop.dives){
+            return(
+                <>
+                    <Button variant="primary"id='closeDives'onClick={(e) => {this.props.diveTrigger(e);}} > 
+                    X  Dives</Button>
+                    </>
+            )
+        }
+
+    }
            
     render() {
         return(
             <> 
                 {this.showClimbingOptions()}
                 {this.showDivingOptions()}
+                {this.closeButtons()}
             </>
             )
         };

@@ -41,6 +41,18 @@
     color: rgba(255, 255, 255, 0.959);
 }
 
+#closeClimbs{
+    position: fixed;
+    bottom: 0;
+    left: 10%;
+}
+
+#closeDives{
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+}
+
 #homelink{
     color: rgba(255, 255, 255, 0.959);
 }
@@ -92,6 +104,13 @@
     color: rgba(255, 255, 255, 0.959);
     margin: 20px 10px;
 }
+
+#activityResult{
+    text-shadow: 1px 1px white;
+
+}
+
+
 
 /* #loadingModal{
     color: rgba(255, 255, 255);
