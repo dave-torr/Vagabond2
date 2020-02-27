@@ -23,6 +23,40 @@ class Home extends Component {
         })
     }
 
+    loadingSpinners = () =>{
+        if(this.props.stateprop.infoReady === false){
+            return (
+                <>
+                <Row>
+                    <Col md={{ span: 6, offset: 3 }}  >
+                        <Spinner animation="border" variant="secondary" />
+                        <Spinner animation="border" variant="success" />
+                        <Spinner animation="border" variant="danger" />
+                        <Spinner animation="border" variant="warning" />
+                        <Spinner animation="border" variant="info" />
+                        <Spinner animation="border" variant="dark" />
+                        </Col>
+                    </Row>
+                <Row>
+                    <Col md={{ span: 6, offset: 3 }}>
+                        loading adventures...
+                            </Col>
+                    </Row>
+
+                </>
+            )
+        } if (this.props.stateprop.infoReady === true){
+            return (
+                <>
+                <h4>your adventures are ready</h4>
+                    <Modal.Footer >
+                        <Button onClick={this.modalTriggerOFF}>explore</Button>
+                        </Modal.Footer>
+                    </>
+            )
+        }
+    }
+
     loadModal = () =>{
         if(this.state.modal=== true){
         return (
@@ -34,41 +68,19 @@ class Home extends Component {
                     show={this.state.modal}
                     id='loadingModal'
                     >
-                    <Modal.Header>
+                    <Modal.Header >
                         <Modal.Title id="contained-modal-title-vcenter">
                             a v e n t u r i e r . f l
                         </Modal.Title>
                         </Modal.Header>
-                    <Modal.Body>
-                        <Container>
-                            <Row>
-                            <Col md={{ span: 6, offset: 3 }}>
-                            <Spinner animation="border" variant="secondary" />
-                            <Spinner animation="border" variant="success" />
-                            <Spinner animation="border" variant="danger" />
-                            <Spinner animation="border" variant="warning" />
-                            <Spinner animation="border" variant="info" />
-                            <Spinner animation="border" variant="dark" />
-                        
-                            </Col>
-                            </Row>
-                            <Row>
-                            <Col md={{ span: 6, offset: 3 }}>
-                            loading adventures...
-                            </Col>
-                            </Row>
-                        </Container>
+                    <Modal.Body >
+                        {this.loadingSpinners()}
                         </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={this.modalTriggerOFF}>Close</Button>
-                        </Modal.Footer>
                 </Modal>
             </>
             )
         }
     }
-
-
 
     formFunction = () =>{
         if(this.props.stateprop.introState === false){
@@ -99,21 +111,13 @@ class Home extends Component {
                         </Col>
                     </Row>
                 </Container>
-
-
             )
-        } 
-        if(this.props.stateprop.infoReady === false &&  this.props.stateprop.introState === false){
-            return ( 
-                
-            <h1>Cucu</h1>)
-        }
+        }               
     }
 
     render() {
         return (
             <div>
-                {console.log(this.state)}
                 {this.formFunction()}
                 {this.loadModal()}
             </div>

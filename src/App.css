@@ -3,11 +3,21 @@
     scroll-behavior: unset;
   }
 
+/* @950 px screen size, logo should be 231 max  */
+
 #generalLogo{
     padding: 5px;
     margin: 25px;
     width: 24%;
+    
+}
 
+@media screen and (min-width: 400px){
+    #generalLogo{
+        padding: 5px;
+        margin: 25px;
+        width: 230px;
+    }
 }
 
 .App{
@@ -41,7 +51,7 @@
     border-style: solid;
     border-color: rgb(206, 176, 7);
     text-shadow: 1px 1px white;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 #climbCardDetail{
@@ -55,7 +65,7 @@
     border-style: solid;
     border-color: rgb(116, 141, 177);
     text-shadow: 1px 1px white;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 #diveCardDetail{
@@ -77,3 +87,16 @@
     margin-top: 10px;
     margin-bottom:10px;
 }
+
+#aboutText{
+    color: rgba(255, 255, 255, 0.959);
+    margin: 20px 10px;
+}
+
+/* #loadingModal{
+    color: rgba(255, 255, 255);
+}
+
+#modalDetail{
+    background-color: rgb(160, 31, 31)
+} */

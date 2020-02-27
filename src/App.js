@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     introState: true,
     infoReady: false,
+    aboutState: false,
     climbs: false,
     dives: false,
     departurecity: " ",
@@ -33,6 +34,18 @@ class App extends Component {
       this.setState({
         departurecity: e.target.value, 
       }, ()=> this.findlatLongCraigs())
+  }
+
+  aboutHandler = (e) =>{
+    this.setState({
+      aboutState: !this.state.aboutState
+    })
+  }
+
+  aboutCloser = (e) =>{
+    this.setState({
+      aboutState: false
+    })
   }
 
   findlatLongCraigs = async () =>{
@@ -84,20 +97,32 @@ class App extends Component {
     })
   }
 
+  homeLogo = (e) =>{
+    this.setState({
+      introState: true,
+      infoReady: false,
+      aboutState: false,
+      climbs: false,
+      dives: false,
+    })
+  }
+
+  
+
   render() {  
     return (
       <>
-
-        {console.log(this.state.introState, 'IntroState')}
-        {console.log(this.state.infoReady, 'infoReady')}
         <div className="App" >
         <div>
-        <img id="generalLogo" alt="Logo" src={Logo} />
+        <img id="generalLogo" alt="Logo" src={Logo} onClick={(e) => {this.homeLogo(e);}}/>
         </div> 
-
+            {console.log('Dives', this.state.climbs)}
+            {console.log('Climbs', this.state.climbs)}
             <Intro
               stateprop={this.state}
               introHandler={this.introHandler}
+              aboutHandler={this.aboutHandler}
+              aboutCloser={this.aboutCloser}
               />
 
             <Home
@@ -106,7 +131,9 @@ class App extends Component {
                 findlatLongCraigs={this.findlatLongCraigs}
               /> 
 
-            <About />
+            <About 
+                stateprop={this.state}
+              />
          
             <Distances 
                 inputDropdown={this.inputForms}

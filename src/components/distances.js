@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Col, Row, Container, Tooltip, OverlayTrigger} from 'react-bootstrap';
-import { Link, } from 'react-router-dom';
-
 
 class Distances extends Component {
       
@@ -32,7 +30,7 @@ class Distances extends Component {
     showClimbButton = () =>{
         if( (this.props.stateprop.climbs === false) && (this.props.stateprop.infoReady === true)){
             return (
-                <Button variant="outline-warning" onClick={(e) => {this.props.loadClimbHandler(e);}} > 
+                <Button variant="warning" onClick={(e) => {this.props.loadClimbHandler(e);}} > 
                 Load Climbing Areas 
                 </Button>
             )
@@ -71,8 +69,8 @@ class Distances extends Component {
                             <h4>
                             Rating: {eachClimb.stars}/5 </h4></Col>
                         <Col sm id="climbCardDetail">
-                            <h5> <Link to='{eachClimb.url}' >
-                            Link </Link> </h5></Col>
+                            <h5> <a href='{eachClimb.url}' >
+                            Link </a> </h5></Col>
                     </Row>
                     </Container>
                     )
@@ -107,8 +105,7 @@ class Distances extends Component {
                                         <Tooltip id="nauticalMiles">
                                         <strong>{eachDive.distance *1.1}</strong> miles. 
                                         </Tooltip>
-                                    }
-                                    >
+                                                }>
                                     <h5>Distance: {eachDive.distance} Nautical Miles </h5>
                                     </OverlayTrigger>
                                 
@@ -143,11 +140,11 @@ class Distances extends Component {
 
         if( (this.props.stateprop.dives === false) && (this.props.stateprop.infoReady === true)){
             return (
-                <Button variant="outline-primary" onClick={(e) => {this.props.loadDiveHandler(e);}}>
+                <Button variant="primary" onClick={(e) => {this.props.loadDiveHandler(e);}}>
                     Load Diving Sites
                     </Button>
             )
-        } console.log(this.props.stateprop.dives)
+        } 
     }
            
     render() {
@@ -155,7 +152,6 @@ class Distances extends Component {
             <> 
                 {this.showClimbingOptions()}
                 {this.showDivingOptions()}
-
             </>
             )
         };
